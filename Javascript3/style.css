@@ -1,0 +1,104 @@
+/* Chyenne Dickens, 04/07/2025 */
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: linear-gradient(135deg, #42a5f5, #478ed1, #0d47a1);
+  min-height: 100%; /* added a min-height */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+  color: #fff;
+  display: flex; /* turned the body into a flex layout and made the flex-direction a column */
+  justify-content: center;
+  align-items: center; /* center aligned the items and the text */
+  min-height: 100vh; /* added a min-height */
+  flex-direction: column;
+  text-align: center;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px; /* added both a width and a max width */
+  width: 90%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px; /* added a border-radius and padding */
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* added a box-shadow */
+}
+
+.display {/* took off the flex: 1 and the justify-content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.display__time-left {
+  font-size: 12rem; /* made the font size smaller */
+  font-weight: 300; /* made the font weight more bold */
+  margin: 0;
+  color: white;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.display__end-time {
+  font-size: 3rem;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+.timer__controls {
+  display: flex;
+  flex-wrap: wrap; /* added a flex wrap a gap of 1rem, justify-content: center, and a margin-bottom: 2rem */
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.timer__controls > * {
+  flex: 1 1 120px; /* moves the enter minutes form down */
+}
+
+.timer__controls form {
+  display: flex;
+  flex: 1;
+}
+
+.timer__controls input[type="text"] {/* add all of this to adjust the enter minutes form to make it fit the content */
+  flex: 1;
+  border: none;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  border-radius: 10px;
+  outline: none;
+}
+
+.timer__button,
+input[type="submit"],
+#stopButton { /* all of this adjusted the stop button and all of the timer buttons */
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.2s;
+  font-family: 'Inconsolata', monospace;
+}
+
+.timer__button:hover,
+input[type="submit"]:hover,
+#stopButton:hover {/* creates a hover effect */
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
