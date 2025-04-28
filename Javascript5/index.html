@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get User Media Code Along!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Camera Icon-->
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
 
+  <div class="photobooth">
+    <div class="controls">
+      <button class="filter-btn" id="takePhotoBtn" onClick="takePhoto()"> <!--Added a camera icon-->
+        <i class="fas fa-camera"></i> 
+      </button>
+     <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" min=0 max=255 name="rmin">
+        <label for="rmax">Red Max:</label>
+        <input type="range" min=0 max=255 name="rmax">
+
+        <br>
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" min=0 max=255 name="gmin">
+        <label for="gmax">Green Max:</label>
+        <input type="range" min=0 max=255 name="gmax">
+
+        <br>
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" min=0 max=255 name="bmin">
+        <label for="bmax">Blue Max:</label>
+        <input type="range" min=0 max=255 name="bmax">
+      </div> 
+    </div>
+
+    <!-- Added buttons for the filters -->
+    <div class="filter-buttons">
+      <button class="filter-button" onclick="setFilter('none')">None</button>
+      <button class="filter-button" onclick="setFilter('mirrorEffect')">Mirror</button>
+      <button class="filter-button" onclick="setFilter('redEffect')">Red Effect</button>
+      <button class="filter-button" onclick="setFilter('rgbSplit')">RGB Split</button>
+      <!--<button class="filter-button" onclick="setFilter('greenScreen')">Green Screen</button> Remove the greenscreen-->
+      <button class="filter-button" onclick="setFilter('invertColors')">Invert Colors</button>
+      <button class="filter-button" onclick="setFilter('grayscaleEffect')">Grayscale</button>
+      <button class="filter-button" onclick="setFilter('pixelateEffect')">Pixelate</button>
+      <button class="filter-button" onclick="setFilter('kaleidoscopeEffect')">Kaleidoscope</button>
+      <button class="filter-button" onclick="setFilter('spiralWarpEffect')">Spiral Warp</button>
+    </div>
+
+
+    <canvas class="photo"></canvas>
+    <video class="player"></video>
+    <div class="flash"></div> <!-- Adds a flash -->
+    <div class="strip"></div>
+  </div>
+
+  <audio class="snap" src="./snap.mp3" hidden></audio>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
